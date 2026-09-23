@@ -1,0 +1,109 @@
+{
+  "caseId": "CR-2026-0891",
+  "title": "Operation Falcon: Inter-State Arms & Narcotics Supply Chain",
+  "category": "Organized Crime / Arms Trafficking",
+  "psId": "26189",
+  "teamId": "133455",
+  "teamName": "BLACKSWAN",
+  "status": "Active Investigation",
+  "classification": "RESTRICTED // LAW ENFORCEMENT INTELLIGENCE ONLY",
+  "isDemonstration": true,
+  "disclaimer": "All entity names, telephone records, financial accounts, and vehicle numbers are synthesized demonstration artifacts for SIH 2026 PS-26189 evaluation.",
+  "summary": "Multi-jurisdictional intelligence operation tracking an illicit interstate arms and hawala nexus. Intelligence fusion across 14 CDR intercepts, 28 banking vouchers, and 4 field surveillance logs uncovered key coordinator nodes and high-frequency communication choke points.",
+  "evidenceFiles": [
+    { "id": "DOC-01", "name": "FIR-142-2026-SpecialCell.pdf", "type": "FIR / Police Report", "size": "1.8 MB", "recordsExtracted": 14, "status": "Processed" },
+    { "id": "DOC-02", "name": "CDR_9811240192_Aug2026.csv", "type": "Telecom CDR", "size": "4.2 MB", "recordsExtracted": 842, "status": "Processed" },
+    { "id": "DOC-03", "name": "Bank_Ledger_FalconCargo.csv", "type": "Banking / Financial", "size": "890 KB", "recordsExtracted": 56, "status": "Processed" },
+    { "id": "DOC-04", "name": "Surveillance_Log_FieldSec4.json", "type": "Field Observation", "size": "240 KB", "recordsExtracted": 19, "status": "Processed" },
+    { "id": "DOC-05", "name": "FASTag_TollCross_HR26.csv", "type": "ANPR / Transit Log", "size": "512 KB", "recordsExtracted": 128, "status": "Processed" }
+  ],
+  "entities": [
+    { "id": "E01", "name": "Rahim Khan", "type": "Person", "role": "Syndicate Kingpin", "source": "FIR-142-2026-SpecialCell.pdf", "confidence": 96, "status": "Verified", "evidenceCount": 18, "details": "Subject of prime interest under Arms Act Sec 25. Operates through front cargo firms." },
+    { "id": "E02", "name": "Vikram Solanki", "type": "Person", "role": "Logistics Dispatcher", "source": "Surveillance_Log_FieldSec4.json", "confidence": 91, "status": "Verified", "evidenceCount": 12, "details": "Fleet coordinator managing interstate transport conduits across NCR and Rajasthan." },
+    { "id": "E03", "name": "Tariq Ahmed", "type": "Person", "role": "Hawala Bookkeeper", "source": "Bank_Ledger_FalconCargo.csv", "confidence": 88, "status": "Needs Review", "evidenceCount": 9, "details": "Account signee for secondary front entities. Manages RTGS clearing vouchers." },
+    { "id": "E04", "name": "Devendra Singh", "type": "Person", "role": "Arms Fabricator", "source": "FIR-142-2026-SpecialCell.pdf", "confidence": 79, "status": "Needs Review", "evidenceCount": 6, "details": "Identified in technical intel as clandestine manufacturing contact." },
+    { "id": "E05", "name": "+91-98112-40192", "type": "Phone", "role": "Primary Tactical SIM", "source": "CDR_9811240192_Aug2026.csv", "confidence": 99, "status": "Verified", "evidenceCount": 24, "details": "Tower registrations correlate with suspect residence in Seelampur and safehouses." },
+    { "id": "E06", "name": "+91-98710-55219", "type": "Phone", "role": "Logistics SIM", "source": "CDR_9811240192_Aug2026.csv", "confidence": 94, "status": "Verified", "evidenceCount": 14, "details": "Interfaced with highway toll checkpoints. Subscribed under pseudonym." },
+    { "id": "E07", "name": "+91-97118-90341", "type": "Phone", "role": "Unregistered Burner", "source": "CDR_9811240192_Aug2026.csv", "confidence": 65, "status": "Needs Review", "evidenceCount": 4, "details": "Prepaid SIM activated using forged Aadhaar credentials; 03:00 AM burst calls." },
+    { "id": "E08", "name": "DL-01-AB-4491", "type": "Vehicle", "role": "Lead Escort (Scorpio)", "source": "Surveillance_Log_FieldSec4.json", "confidence": 93, "status": "Verified", "evidenceCount": 8, "details": "Black Mahindra Scorpio sighted at 3 consignment meetings; registered to shell address." },
+    { "id": "E09", "name": "HR-26-CQ-8812", "type": "Vehicle", "role": "Concealed Carrier", "source": "FASTag_TollCross_HR26.csv", "confidence": 87, "status": "Verified", "evidenceCount": 7, "details": "Bolero pickup with modified chassis compartment for covert hardware haulage." },
+    { "id": "E10", "name": "HDFC-40918230192", "type": "BankAccount", "role": "Primary Pooling A/C", "source": "Bank_Ledger_FalconCargo.csv", "confidence": 95, "status": "Verified", "evidenceCount": 16, "details": "Title: Falcon Cargo Logistics. Received Rs. 48 Lakhs in non-business structured credits." },
+    { "id": "E11", "name": "ICICI-99021849102", "type": "BankAccount", "role": "Hawala Layering A/C", "source": "Bank_Ledger_FalconCargo.csv", "confidence": 90, "status": "Verified", "evidenceCount": 11, "details": "Rapid dispersal account clearing funds within 120 minutes of deposit." },
+    { "id": "E12", "name": "Falcon Cargo Logistics", "type": "Organization", "role": "Front Commercial Entity", "source": "Bank_Ledger_FalconCargo.csv", "confidence": 92, "status": "Verified", "evidenceCount": 15, "details": "Incorporated with zero genuine freight invoices. Used to justify high-value bank flows." },
+    { "id": "E13", "name": "Mehrauli Safehouse", "type": "Location", "role": "Consignment Stash", "source": "Surveillance_Log_FieldSec4.json", "confidence": 85, "status": "Verified", "evidenceCount": 6, "details": "Isolated godown leased under third-party name; perimeter surveillance active." },
+    { "id": "E14", "name": "Neemrana Toll Checkpoint", "type": "Location", "role": "Interstate Transit Point", "source": "FASTag_TollCross_HR26.csv", "confidence": 89, "status": "Verified", "evidenceCount": 5, "details": "NH-48 corridor where transport vehicle was recorded 4 times in 72 hours." },
+    { "id": "E15", "name": "Hardware Handoff #3", "type": "Event", "role": "Suspected Transfer Event", "source": "Surveillance_Log_FieldSec4.json", "confidence": 84, "status": "Needs Review", "evidenceCount": 4, "details": "Physical rendezvous recorded between Vikram Solanki and unidentified courier." }
+  ],
+  "relationships": [
+    { "id": "R01", "source": "E01", "target": "E05", "type": "USES_PHONE", "confidence": 98, "status": "Verified", "sourceDoc": "CDR_9811240192_Aug2026.csv", "date": "2026-08-01", "details": "Primary subscriber and continuous cell tower alignment." },
+    { "id": "R02", "source": "E01", "target": "E08", "type": "DRIVES_VEHICLE", "confidence": 91, "status": "Verified", "sourceDoc": "Surveillance_Log_FieldSec4.json", "date": "2026-08-03", "details": "Photographed operating vehicle during surveillance sweep." },
+    { "id": "R03", "source": "E05", "target": "E06", "type": "FREQUENT_CALLS", "confidence": 95, "status": "Verified", "sourceDoc": "CDR_9811240192_Aug2026.csv", "date": "2026-08-05", "details": "48 bilateral voice calls, total duration 242 minutes." },
+    { "id": "R04", "source": "E06", "target": "E02", "type": "CARRIED_BY", "confidence": 92, "status": "Verified", "sourceDoc": "CDR_9811240192_Aug2026.csv", "date": "2026-08-02", "details": "Correlated with tower pings at Vikram Solanki's known address." },
+    { "id": "R05", "source": "E02", "target": "E09", "type": "OPERATES_VEHICLE", "confidence": 88, "status": "Verified", "sourceDoc": "FASTag_TollCross_HR26.csv", "date": "2026-08-07", "details": "FASTag user KYC and toll plaza high-resolution imagery match." },
+    { "id": "R06", "source": "E02", "target": "E13", "type": "VISITED_FACILITY", "confidence": 86, "status": "Needs Review", "sourceDoc": "Surveillance_Log_FieldSec4.json", "date": "2026-08-08", "details": "Bolero pickup parked inside compound gates on 3 consecutive nights." },
+    { "id": "R07", "source": "E01", "target": "E12", "type": "BENEFICIAL_OWNER", "confidence": 89, "status": "AI Suggested", "sourceDoc": "Bank_Ledger_FalconCargo.csv", "date": "2026-08-04", "details": "Beneficial ownership inferred via undisclosed power of attorney and KYC records." },
+    { "id": "R08", "source": "E12", "target": "E10", "type": "HOLDS_ACCOUNT", "confidence": 97, "status": "Verified", "sourceDoc": "Bank_Ledger_FalconCargo.csv", "date": "2026-08-01", "details": "Corporate account opened at HDFC Connaught Place branch." },
+    { "id": "R09", "source": "E10", "target": "E11", "type": "TRANSFERRED_FUNDS", "confidence": 96, "status": "Verified", "sourceDoc": "Bank_Ledger_FalconCargo.csv", "date": "2026-08-09", "details": "RTGS Transfer #291048: Rs. 24,50,000 for fictitious 'Machinery Spares'." },
+    { "id": "R10", "source": "E11", "target": "E03", "type": "CONTROLLED_BY", "confidence": 87, "status": "Needs Review", "sourceDoc": "Bank_Ledger_FalconCargo.csv", "date": "2026-08-09", "details": "Signatory mandate card matches Tariq Ahmed's secondary PAN card." },
+    { "id": "R11", "source": "E03", "target": "E04", "type": "TRANSFERRED_FUNDS", "confidence": 82, "status": "AI Suggested", "sourceDoc": "Bank_Ledger_FalconCargo.csv", "date": "2026-08-11", "details": "IMPS micro-burst transactions totaling Rs. 6,80,000 over 48 hours." },
+    { "id": "R12", "source": "E04", "target": "E15", "type": "SUPPLIED_HARDWARE", "confidence": 78, "status": "Needs Review", "sourceDoc": "FIR-142-2026-SpecialCell.pdf", "date": "2026-08-13", "details": "Source informant reports consignment prepared for transfer to safehouse." },
+    { "id": "R13", "source": "E02", "target": "E14", "type": "CROSSED_TOLL", "confidence": 92, "status": "Verified", "sourceDoc": "FASTag_TollCross_HR26.csv", "date": "2026-08-11", "details": "ANPR Camera timestamp: 23:14:02 hrs heading towards border checkpost." },
+    { "id": "R14", "source": "E07", "target": "E05", "type": "NOCTURNAL_BURST_CALLS", "confidence": 64, "status": "Needs Review", "sourceDoc": "CDR_9811240192_Aug2026.csv", "date": "2026-08-12", "details": "14 short calls (avg 18s) strictly between 02:30 and 04:15 AM." }
+  ],
+  "identityResolution": [
+    {
+      "id": "ID-001",
+      "primaryEntity": "Rahim Khan",
+      "candidateEntity": "R. Khan alias 'Tiger Bhai'",
+      "matchScore": 89.4,
+      "status": "Needs Review",
+      "matchingFactors": [
+        "Identical IMEI (358912049182301) registered across both SIM cards",
+        "Associated with vehicle DL-01-AB-4491 in 2 independent traffic logs",
+        "Geographic cluster overlap: 92% proximity to Seelampur residential grid"
+      ],
+      "supportingRecords": "CDR Tower Dump 14-Aug & FIR-142-2026 Para 4",
+      "recommendedAction": "Merge entity profiles to unite financial and tactical intelligence nodes."
+    }
+  ],
+  "reviewQueue": [
+    {
+      "id": "REV-001",
+      "type": "Low-Confidence Entity",
+      "subject": "Prepaid SIM (+91-97118-90341)",
+      "confidence": 65,
+      "flagReason": "Activated with suspicious single-photo Aadhaar. High nocturnal call velocity.",
+      "sourceDoc": "CDR_9811240192_Aug2026.csv",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "id": "REV-002",
+      "type": "Inferred Relationship",
+      "subject": "Falcon Cargo -> Tariq Ahmed (Indirect Financial Flow)",
+      "confidence": 82,
+      "flagReason": "Intermediary shell accounts routed Rs. 6.8 Lakhs with no direct invoice.",
+      "sourceDoc": "Bank_Ledger_FalconCargo.csv",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "id": "REV-003",
+      "type": "Anomalous Movement Pattern",
+      "subject": "Bolero HR-26-CQ-8812 (Repeated Toll Jumps)",
+      "confidence": 88,
+      "flagReason": "Vehicle passed Neemrana toll 4 times within 72h without documented cargo manifest.",
+      "sourceDoc": "FASTag_TollCross_HR26.csv",
+      "status": "Pending",
+      "notes": ""
+    }
+  ],
+  "timeline": [
+    { "id": "TL-01", "date": "2026-08-01 10:15", "eventType": "FIR Mention", "title": "FIR Registered at Special Cell", "description": "Case registered under Arms Act & criminal conspiracy following field interception.", "source": "FIR-142-2026-SpecialCell.pdf", "entityId": "E01" },
+    { "id": "TL-02", "date": "2026-08-04 14:20", "eventType": "Transaction", "title": "Corporate Pool Deposit Rs. 24.5L", "description": "Structured cash deposit into Falcon Cargo Logistics pooling account.", "source": "Bank_Ledger_FalconCargo.csv", "entityId": "E10" },
+    { "id": "TL-03", "date": "2026-08-07 19:40", "eventType": "Vehicle Sighting", "title": "Black Scorpio DL-01-AB-4491 Spotted", "description": "Vehicle logged outside Connaught Place commercial center with Rahim Khan driving.", "source": "Surveillance_Log_FieldSec4.json", "entityId": "E08" },
+    { "id": "TL-04", "date": "2026-08-11 23:14", "eventType": "Location Event", "title": "Neemrana Border Toll Crossing", "description": "Bolero pickup HR-26-CQ-8812 crossed NH-48 interstate toll booth heading south.", "source": "FASTag_TollCross_HR26.csv", "entityId": "E09" },
+    { "id": "TL-05", "date": "2026-08-12 03:15", "eventType": "Call Event", "title": "Nocturnal Burst Communication", "description": "14 short-duration calls between burner SIM and suspect phone registered.", "source": "CDR_9811240192_Aug2026.csv", "entityId": "E05" },
+    { "id": "TL-06", "date": "2026-08-14 16:30", "eventType": "Analyst Decision", "title": "Field Surveillance Escalation Approved", "description": "Supervising investigator escalated Mehrauli safehouse to active interception status.", "source": "Investigator Dossier", "entityId": "E13" }
+  ]
+}

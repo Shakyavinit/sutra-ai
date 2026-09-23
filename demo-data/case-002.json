@@ -1,0 +1,106 @@
+{
+  "caseId": "CR-2026-1144",
+  "title": "Operation Ghost Ledger: Multi-State Cyber Mule & Crypto Layering Network",
+  "category": "Cyber Financial Fraud / Mule Networks",
+  "psId": "26189",
+  "teamId": "133455",
+  "teamName": "BLACKSWAN",
+  "status": "High Priority Triage",
+  "classification": "RESTRICTED // CYBER CRIME DIVISION ONLY",
+  "isDemonstration": true,
+  "disclaimer": "All cyber handles, crypto addresses, and banking identifiers are fictionalized demonstration records for SIH 2026 PS-26189 evaluation.",
+  "summary": "Forensic graph reconstruction of a Telegram-driven investment task fraud. Unravelled Rs. 4.8 Crores dispersed across 37 tiered bank accounts in 6 states within 18 minutes of victim deposit, culminating in USDT cryptocurrency conversion via unregulated P2P escrow desks.",
+  "evidenceFiles": [
+    { "id": "DOC-C1", "name": "NCRP_Complaint_Portal_90112.json", "type": "National Cyber Crime Report", "size": "450 KB", "recordsExtracted": 8, "status": "Processed" },
+    { "id": "DOC-C2", "name": "Axis_SBI_Mule_Statements.csv", "type": "Banking Ledger (Layer 1-3)", "size": "3.8 MB", "recordsExtracted": 640, "status": "Processed" },
+    { "id": "DOC-C3", "name": "Crypto_Explorer_Trace_USDT.csv", "type": "On-Chain Blockchain Ledger", "size": "1.2 MB", "recordsExtracted": 115, "status": "Processed" },
+    { "id": "DOC-C4", "name": "Telegram_Channel_Audit_Log.txt", "type": "Digital Chat Forensics", "size": "820 KB", "recordsExtracted": 42, "status": "Processed" }
+  ],
+  "entities": [
+    { "id": "E101", "name": "Aniket Verma", "type": "Person", "role": "Mule Ring Orchestrator", "source": "NCRP_Complaint_Portal_90112.json", "confidence": 94, "status": "Verified", "evidenceCount": 16, "details": "Coordinator recruiting university students to open current accounts for 5% commission." },
+    { "id": "E102", "name": "Sunil Mehra", "type": "Person", "role": "Tier-1 Mule Account Holder", "source": "Axis_SBI_Mule_Statements.csv", "confidence": 91, "status": "Verified", "evidenceCount": 10, "details": "Individual whose KYC credentials were used to receive the direct victim transfer of Rs. 15 Lakhs." },
+    { "id": "E103", "name": "Pooja Sharma", "type": "Person", "role": "Digital Identity Forger", "source": "Telegram_Channel_Audit_Log.txt", "confidence": 76, "status": "Needs Review", "evidenceCount": 5, "details": "Admin of VIP Task group; suspected of generating synthetic utility bills." },
+    { "id": "E104", "name": "Kunal Sen", "type": "Person", "role": "P2P Crypto Merchant", "source": "Crypto_Explorer_Trace_USDT.csv", "confidence": 89, "status": "Verified", "evidenceCount": 11, "details": "OTC merchant receiving domestic bank transfers and releasing USDT to offshore wallets." },
+    { "id": "E105", "name": "+91-88001-29184", "type": "Phone", "role": "VoIP Virtual Gateway", "source": "Telegram_Channel_Audit_Log.txt", "confidence": 96, "status": "Verified", "evidenceCount": 18, "details": "Virtual number routed through international SIP trunk to access Telegram API." },
+    { "id": "E106", "name": "+91-91234-88712", "type": "Phone", "role": "Netbanking OTP Receiver", "source": "Axis_SBI_Mule_Statements.csv", "confidence": 92, "status": "Verified", "evidenceCount": 12, "details": "Prepaid SIM registered under mule identity, active only during fund dispersal windows." },
+    { "id": "E107", "name": "+91-99581-22940", "type": "Phone", "role": "Recruitment Outreach", "source": "NCRP_Complaint_Portal_90112.json", "confidence": 68, "status": "Needs Review", "evidenceCount": 4, "details": "WhatsApp number used for mass phishing cold-messages offering daily task payouts." },
+    { "id": "E108", "name": "SBI-33019284712", "type": "BankAccount", "role": "Tier-1 Ingestion Account", "source": "Axis_SBI_Mule_Statements.csv", "confidence": 98, "status": "Verified", "evidenceCount": 21, "details": "Received direct victim debit of Rs. 15,00,000; completely drained in 8 minutes." },
+    { "id": "E109", "name": "AXIS-91823019284", "type": "BankAccount", "role": "Tier-2 Layering Account", "source": "Axis_SBI_Mule_Statements.csv", "confidence": 95, "status": "Verified", "evidenceCount": 14, "details": "Secondary node receiving 4 structured IMPS transfers of Rs. 3,50,000 each." },
+    { "id": "E110", "name": "KOTAK-10293847561", "type": "BankAccount", "role": "Merchant P2P Pool", "source": "Axis_SBI_Mule_Statements.csv", "confidence": 93, "status": "Verified", "evidenceCount": 13, "details": "Escrow account held by Kunal Sen; reconciled directly with USDT ledger." },
+    { "id": "E111", "name": "0x71C8a9...49F1", "type": "Bank Account / Wallet", "role": "ERC-20 USDT Hot Wallet", "source": "Crypto_Explorer_Trace_USDT.csv", "confidence": 97, "status": "Verified", "evidenceCount": 17, "details": "Ethereum address receiving 18,200 USDT; forward-transferred to decentralized mixer." },
+    { "id": "E112", "name": "TRX-TLk3...8bNx", "type": "Bank Account / Wallet", "role": "TRC-20 Cashout Wallet", "source": "Crypto_Explorer_Trace_USDT.csv", "confidence": 91, "status": "Verified", "evidenceCount": 9, "details": "High-velocity TRON address linked to automated Telegram trading bot." },
+    { "id": "E113", "name": "CloudPay Fintech Solutions", "type": "Organization", "role": "Fake Payment Aggregator", "source": "NCRP_Complaint_Portal_90112.json", "confidence": 88, "status": "Verified", "evidenceCount": 8, "details": "Phishing domain configured to simulate Razorpay payment gateway to deceive victims." },
+    { "id": "E114", "name": "Cyber Hub Sector 62", "type": "Location", "role": "Mule Coordination Cell", "source": "Axis_SBI_Mule_Statements.csv", "confidence": 84, "status": "Needs Review", "evidenceCount": 6, "details": "Co-working space WiFi IP used to initiate 14 consecutive netbanking sessions." },
+    { "id": "E115", "name": "Rapid ATM Cash Extraction", "type": "Event", "role": "Physical Cashout Event", "source": "Axis_SBI_Mule_Statements.csv", "confidence": 89, "status": "Verified", "evidenceCount": 7, "details": "4 simultaneous ATM withdrawals totaling Rs. 4,00,000 across Bhiwandi kiosks." }
+  ],
+  "relationships": [
+    { "id": "RC01", "source": "E101", "target": "E105", "type": "OPERATES_VIRTUAL_SIM", "confidence": 96, "status": "Verified", "sourceDoc": "Telegram_Channel_Audit_Log.txt", "date": "2026-08-10", "details": "Digital footprint and browser fingerprint match login sessions." },
+    { "id": "RC02", "source": "E101", "target": "E102", "type": "RECRUITED_MULE", "confidence": 91, "status": "Verified", "sourceDoc": "Telegram_Channel_Audit_Log.txt", "date": "2026-08-12", "details": "Chat records show passbook and chequebook collection instructions." },
+    { "id": "RC03", "source": "E102", "target": "E108", "type": "KYC_ACCOUNT_HOLDER", "confidence": 98, "status": "Verified", "sourceDoc": "Axis_SBI_Mule_Statements.csv", "date": "2026-08-01", "details": "Official bank branch KYC mandate documents verified with Aadhaar." },
+    { "id": "RC04", "source": "E108", "target": "E109", "type": "LAYERED_IMPS_TRANSFER", "confidence": 97, "status": "Verified", "sourceDoc": "Axis_SBI_Mule_Statements.csv", "date": "2026-08-15", "details": "Rs. 14,00,000 routed in 4 sequential packets of Rs. 3.5L within 180 seconds." },
+    { "id": "RC05", "source": "E109", "target": "E110", "type": "P2P_PURCHASE_PAYMENT", "confidence": 94, "status": "Verified", "sourceDoc": "Axis_SBI_Mule_Statements.csv", "date": "2026-08-15", "details": "Direct payment reference matching Binance P2P order #BN-9021849." },
+    { "id": "RC06", "source": "E110", "target": "E104", "type": "ESCROW_BENEFICIARY", "confidence": 93, "status": "Verified", "sourceDoc": "Axis_SBI_Mule_Statements.csv", "date": "2026-08-15", "details": "Kunal Sen registered as verified P2P merchant on exchange." },
+    { "id": "RC07", "source": "E104", "target": "E111", "type": "RELEASED_CRYPTO", "confidence": 95, "status": "Verified", "sourceDoc": "Crypto_Explorer_Trace_USDT.csv", "date": "2026-08-15", "details": "TxHash: 0x82f9104... released 18,200 USDT to hot wallet upon bank credit." },
+    { "id": "RC08", "source": "E111", "target": "E112", "type": "CROSS_CHAIN_BRIDGE", "confidence": 88, "status": "AI Suggested", "sourceDoc": "Crypto_Explorer_Trace_USDT.csv", "date": "2026-08-16", "details": "Swap detected across bridge aggregator transferring assets from ETH to TRON." },
+    { "id": "RC09", "source": "E101", "target": "E113", "type": "CONFIGURED_SHELL", "confidence": 86, "status": "Needs Review", "sourceDoc": "NCRP_Complaint_Portal_90112.json", "date": "2026-08-05", "details": "Whois registration email matches recovery address of suspect's secondary account." },
+    { "id": "RC10", "source": "E102", "target": "E106", "type": "LINKED_NETBANKING_SIM", "confidence": 92, "status": "Verified", "sourceDoc": "Axis_SBI_Mule_Statements.csv", "date": "2026-08-02", "details": "Number used for two-factor authentication during unauthorized fund drains." },
+    { "id": "RC11", "source": "E109", "target": "E115", "type": "ATM_CASH_DRAIN", "confidence": 89, "status": "Verified", "sourceDoc": "Axis_SBI_Mule_Statements.csv", "date": "2026-08-15", "details": "Remaining account balance stripped via debit card ATM withdrawals." },
+    { "id": "RC12", "source": "E101", "target": "E114", "type": "ORIGINATED_SESSIONS", "confidence": 83, "status": "Needs Review", "sourceDoc": "Axis_SBI_Mule_Statements.csv", "date": "2026-08-15", "details": "Static IP allocated to co-working hub logged during 6 admin actions." }
+  ],
+  "identityResolution": [
+    {
+      "id": "ID-002",
+      "primaryEntity": "Aniket Verma",
+      "candidateEntity": "A. K. Verma alias @shadow_lead_99",
+      "matchScore": 94.1,
+      "status": "Needs Review",
+      "matchingFactors": [
+        "Hardware Device UUID match across Telegram desktop client and banking portal",
+        "Consistent ISP subnet (/24) registered during administrative session logins",
+        "PAN document metadata traces to identical graphic creation workstation"
+      ],
+      "supportingRecords": "Telegram Audit JSON & Netbanking Access Header Logs",
+      "recommendedAction": "Consolidate persona to expose full cyber syndicate master node."
+    }
+  ],
+  "reviewQueue": [
+    {
+      "id": "REV-101",
+      "type": "Cross-Chain Inferred Hop",
+      "subject": "0x71C8a9...49F1 -> TRX-TLk3...8bNx",
+      "confidence": 88,
+      "flagReason": "Bridge transaction matched by timestamp delta (44s) and volume (18,200 USDT).",
+      "sourceDoc": "Crypto_Explorer_Trace_USDT.csv",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "id": "REV-102",
+      "type": "Low-Confidence Node",
+      "subject": "Pooja Sharma (Synthetic KYC Creator)",
+      "confidence": 76,
+      "flagReason": "Aadhaar image shows digital manipulation artifacts around facial boundary.",
+      "sourceDoc": "Telegram_Channel_Audit_Log.txt",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "id": "REV-103",
+      "type": "Subnet IP Correlation",
+      "subject": "Cyber Hub Sector 62 Netbanking IP",
+      "confidence": 83,
+      "flagReason": "14 netbanking logins initiated from shared co-working IP within 15 minutes.",
+      "sourceDoc": "Axis_SBI_Mule_Statements.csv",
+      "status": "Pending",
+      "notes": ""
+    }
+  ],
+  "timeline": [
+    { "id": "TLC-01", "date": "2026-08-15 11:02", "eventType": "FIR Mention", "title": "Victim Complaint Lodged on NCRP", "description": "Victim reported losing Rs. 15,00,000 to bogus task investment group.", "source": "NCRP_Complaint_Portal_90112.json", "entityId": "E108" },
+    { "id": "TLC-02", "date": "2026-08-15 11:04", "eventType": "Transaction", "title": "Direct Credit Rs. 15.0L to Tier-1 Mule", "description": "Victim RTGS credited into SBI-33019284712 (Sunil Mehra).", "source": "Axis_SBI_Mule_Statements.csv", "entityId": "E108" },
+    { "id": "TLC-03", "date": "2026-08-15 11:07", "eventType": "Transaction", "title": "Tier-2 Rapid Layering Transfers", "description": "Account drained via 4 split IMPS packets into AXIS-91823019284.", "source": "Axis_SBI_Mule_Statements.csv", "entityId": "E109" },
+    { "id": "TLC-04", "date": "2026-08-15 11:12", "eventType": "Transaction", "title": "P2P Escrow Deposit to Kunal Sen", "description": "Rs. 10.5 Lakhs credited to OTC merchant account for crypto purchase.", "source": "Axis_SBI_Mule_Statements.csv", "entityId": "E110" },
+    { "id": "TLC-05", "date": "2026-08-15 11:15", "eventType": "Location Event", "title": "ATM Cash Drain in Bhiwandi", "description": "Simultaneous physical withdrawals of Rs. 4 Lakhs completed.", "source": "Axis_SBI_Mule_Statements.csv", "entityId": "E115" },
+    { "id": "TLC-06", "date": "2026-08-15 11:20", "eventType": "Analyst Decision", "title": "USDT Hot Wallet Blacklist Notice Issued", "description": "Cyber investigator triggered automated notification to exchange compliance desk.", "source": "Investigator Dossier", "entityId": "E111" }
+  ]
+}
