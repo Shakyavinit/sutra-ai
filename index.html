@@ -3,27 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team BLACKSWAN — AI-Powered Criminal Network Analysis System (SUTRA) | SIH PS26189</title>
-  <meta name="description" content="Official SIH 2026 prototype by Team BLACKSWAN (Team ID: 133455) for Problem Statement PS26189: AI-Powered Criminal Network Analysis System (SUTRA).">
+  <title>AI-Powered Criminal Network Analysis System (SUTRA) | SIH PS26189</title>
+  <meta name="description" content="AI-Powered Criminal Network Analysis System (Prototype Codename: SUTRA). Smart Unified Threat Relationship Analytics for SIH 2026 Problem Statement 26189 | Team BLACKSWAN (ID: 133455).">
   
   <!-- Security Headers & Metadata -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' http://localhost:3000 http://127.0.0.1:3000;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Team BLACKSWAN — AI-Powered Criminal Network Analysis System (SUTRA)">
+  <meta property="og:title" content="AI-Powered Criminal Network Analysis System — SUTRA">
   <meta property="og:description" content="SIH 2026 PS26189 prototype by Team BLACKSWAN. Explainable criminal network discovery, Brandes betweenness centrality, and tamper-evident audit trail.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shakyavinit.github.io/sutra-ai/">
-  <meta property="og:image" content="https://shakyavinit.github.io/sutra-ai/assets/blackswan-logo.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/blackswan-icon.svg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284c7'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -32,9 +31,9 @@
   <div class="lea-top-banner">
     <div class="container banner-inner">
       <div class="banner-left">
-        <span class="lea-secure-chip">RESTRICTED PROTOTYPE // LAW ENFORCEMENT DEMONSTRATION</span>
+        <span class="lea-secure-chip">SIH ACADEMIC PROTOTYPE // SYNTHETIC DEMONSTRATION DATA</span>
         <span class="banner-sep">|</span>
-        <span class="banner-sih-tag">SIH 2026 Problem Statement: <strong>PS26189</strong></span>
+        <span class="banner-sih-tag">SIH 2026 Problem Statement ID: <strong>26189</strong></span>
         <span class="banner-sep">|</span>
         <span class="banner-team-tag">Team <strong>BLACKSWAN</strong> (ID: 133455)</span>
       </div>
@@ -51,11 +50,13 @@
     <div class="container masthead-inner">
       <a href="#landing" class="brand-block">
         <div class="brand-shield-icon">
-          <img src="assets/blackswan-icon.svg" alt="Team BLACKSWAN Official Logo" class="brand-logo-img">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
         </div>
         <div class="brand-titles">
-          <div class="brand-main-title">SUTRA <span class="version-tag">v3.4 PROTOTYPE</span></div>
-          <div class="brand-sub-title">AI-Powered Criminal Network Analysis System &bull; <span class="team-brand-pill">Team BLACKSWAN #133455</span></div>
+          <div class="brand-main-title">SUTRA <span class="version-tag">v0.9.0-sih</span></div>
+          <div class="brand-sub-title">AI-Powered Criminal Network Analysis System</div>
         </div>
       </a>
 
@@ -82,31 +83,24 @@
           </svg>
           <span>Repository</span>
         </a>
-        <button id="btnMobileNavToggle" class="btn btn-sm btn-icon mobile-nav-toggle" aria-label="Toggle navigation menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
       </div>
     </div>
   </header>
 
   <!-- Workspace Navigation Strip -->
-  <nav class="workspace-nav" id="workspaceNav">
+  <nav class="workspace-nav">
     <div class="container nav-scroll-container">
       <a href="#landing" class="nav-tab-btn" data-tab="landing">Overview</a>
-      <a href="#dashboard" class="nav-tab-btn" data-tab="dashboard">Dashboard</a>
+      <a href="#dashboard" class="nav-tab-btn" data-tab="dashboard">Investigation Dashboard</a>
       <a href="#graph" class="nav-tab-btn" data-tab="graph">Network Graph</a>
-      <a href="#upload" class="nav-tab-btn" data-tab="upload">Evidence</a>
-      <a href="#entities" class="nav-tab-btn" data-tab="entities">Entities</a>
+      <a href="#upload" class="nav-tab-btn" data-tab="upload">Evidence Ingestion</a>
+      <a href="#entities" class="nav-tab-btn" data-tab="entities">Extracted Entities</a>
       <a href="#identity" class="nav-tab-btn" data-tab="identity">Identity Resolution</a>
-      <a href="#timeline" class="nav-tab-btn" data-tab="timeline">Timeline</a>
+      <a href="#timeline" class="nav-tab-btn" data-tab="timeline">Case Timeline</a>
       <a href="#review" class="nav-tab-btn" data-tab="review">
         Analyst Review <span id="navReviewBadge" class="tab-badge">0</span>
       </a>
-      <a href="#report" class="nav-tab-btn" data-tab="report">Case Dossier</a>
+      <a href="#report" class="nav-tab-btn" data-tab="report">Case Report</a>
       <a href="#architecture" class="nav-tab-btn" data-tab="architecture">Scale Architecture</a>
     </div>
   </nav>
@@ -117,244 +111,73 @@
     <!-- 1. LANDING PAGE VIEW -->
     <section id="view-landing" class="sutra-view-section active-view">
       <div class="container">
-        <!-- Dual Column Hero: Left Content & Right Black Swan Cyber Shield Emblem -->
-        <div class="hero-split-layout">
-          <!-- Left Column -->
-          <div class="hero-left-content">
-            <div class="hero-classification-badge mono">
-              RESTRICTED // LAW ENFORCEMENT PROTOTYPE
-            </div>
+        <div class="hero-lea-block">
+          <div class="lea-tag-row">
+            <span class="lea-badge-outline">Smart Unified Threat Relationship Analytics</span>
+            <span class="lea-badge-solid">SIH PS26189 Prototype</span>
+          </div>
 
-            <div class="hero-sih-label mono">
-              SIH 2026 &mdash; Problem Statement 26189
-            </div>
+          <h1 class="hero-lea-title">
+            Fragmented Evidence to <br>
+            <span class="highlight-cyan">Explainable Criminal Network Leads</span>
+          </h1>
 
-            <h1 class="hero-lea-title display">
-              <span class="hero-title-dim">Fragmented Evidence.</span><br>
-              <span class="hero-title-bright highlight-cyan">Verified Networks.</span>
-            </h1>
+          <p class="hero-lea-desc">
+            Modern law-enforcement investigations confront siloed, fragmented digital evidence: CDR call logs, banking RTGS ledgers, vehicle ANPR sightings, and police FIR statements. This prototype unifies these multimodal inputs into an explainable relationship graph — calculating Brandes betweenness centrality to surface hidden brokers, financial mules, and priority leads with human-in-the-loop validation and cryptographic audit trails.
+          </p>
 
-            <p class="hero-lea-desc">
-              SUTRA unifies FIRs, CDR dumps, bank records and surveillance logs into an explainable criminal knowledge graph &mdash; with human-in-the-loop verification, Brandes centrality chokepoints, and tamper-evident cryptographic audit trails.
-            </p>
+          <div class="hero-actions-row">
+            <a href="#dashboard" class="btn btn-primary btn-lg">Launch Investigation Workspace</a>
+            <a href="#graph" class="btn btn-secondary btn-lg">Explore Network Graph</a>
+            <button id="btnLandingGuidedDemo" class="btn btn-outline btn-lg">Run Guided Demo Walkthrough</button>
+          </div>
 
-            <div class="hero-team-meta-row mono">
-              <span>Team <strong>BLACKSWAN</strong></span> &bull; <span>ID: <strong>133455</strong></span> &bull; <span>Category: <strong>Software</strong></span> &bull; <span>Theme: <strong>Blockchain &amp; Cybersecurity</strong></span>
-            </div>
-
-            <div class="hero-actions-row">
-              <a href="#dashboard" class="btn btn-primary btn-lg">Launch Investigation Workspace</a>
-              <a href="#graph" class="btn btn-secondary btn-lg">Explore Network Graph</a>
-              <button id="btnLandingGuidedDemo" class="btn btn-outline btn-lg">Run Guided SIH Demo</button>
-            </div>
-
-            <!-- Deterministic Investigative Workflow Strip -->
-            <div class="workflow-strip-card">
-              <div class="workflow-strip-label mono">DETERMINISTIC INVESTIGATIVE WORKFLOW</div>
-              <div class="workflow-stepper">
-                <div class="stepper-step completed">
-                  <div class="step-circle">&#10003;</div>
-                  <span class="step-label">01 Evidence Ingest</span>
-                </div>
-                <div class="stepper-arrow">&rarr;</div>
-                <div class="stepper-step completed">
-                  <div class="step-circle">&#10003;</div>
-                  <span class="step-label">02 Text Extract</span>
-                </div>
-                <div class="stepper-arrow">&rarr;</div>
-                <div class="stepper-step completed">
-                  <div class="step-circle">&#10003;</div>
-                  <span class="step-label">03 Entity Mining</span>
-                </div>
-                <div class="stepper-arrow">&rarr;</div>
-                <div class="stepper-step active">
-                  <div class="step-circle">04</div>
-                  <span class="step-label">04 Identity Res</span>
-                </div>
-                <div class="stepper-arrow">&rarr;</div>
-                <div class="stepper-step">
-                  <div class="step-circle">05</div>
-                  <span class="step-label">05 Network Graph</span>
-                </div>
-                <div class="stepper-arrow">&rarr;</div>
-                <div class="stepper-step">
-                  <div class="step-circle">06</div>
-                  <span class="step-label">06 Lead Verify</span>
-                </div>
-                <div class="stepper-arrow">&rarr;</div>
-                <div class="stepper-step">
-                  <div class="step-circle">07</div>
-                  <span class="step-label">07 Human Approval</span>
-                </div>
-                <div class="stepper-arrow">&rarr;</div>
-                <div class="stepper-step">
-                  <div class="step-circle">08</div>
-                  <span class="step-label">08 Court Dossier</span>
-                </div>
-              </div>
+          <!-- Investigation Pipeline Progression Strip -->
+          <div class="pipeline-flow-card">
+            <div class="pipeline-title">Deterministic Investigative Workflow:</div>
+            <div class="pipeline-steps">
+              <div class="pipeline-step"><span class="step-idx">1</span> Evidence Ingestion</div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step"><span class="step-idx">2</span> Entity &amp; Link Extraction</div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step"><span class="step-idx">3</span> Identity Disambiguation</div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step"><span class="step-idx">4</span> Brandes Centrality Graph</div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step"><span class="step-idx">5</span> Chokepoint &amp; Path Finding</div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step"><span class="step-idx">6</span> Analyst Human Review</div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step"><span class="step-idx">7</span> Hash-Chained Audit Trail</div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step"><span class="step-idx">8</span> Section 63 BSA Dossier</div>
             </div>
           </div>
 
-          <!-- Right Column: Team BLACKSWAN Official Cyber Shield Emblem & Active Dossiers Card -->
-          <div class="hero-right-emblem">
-            <div class="hero-emblem-card">
-              <div class="emblem-card-glow"></div>
-              <div class="emblem-corner corner-tl"></div>
-              <div class="emblem-corner corner-tr"></div>
-              <div class="emblem-corner corner-bl"></div>
-              <div class="emblem-corner corner-br"></div>
-              
-              <div class="emblem-img-wrap">
-                <img src="assets/blackswan-logo.jpg" alt="Team BLACKSWAN Official Cyber Shield Logo" class="blackswan-emblem-img">
-              </div>
-
-              <div class="emblem-badge-banner">
-                <h3>TEAM BLACKSWAN</h3>
-                <span class="emblem-sub-badge mono">SMART INDIA HACKATHON 2026</span>
-              </div>
-
-              <div class="emblem-meta-grid">
-                <div class="emblem-meta-item">
-                  <span class="meta-label">Team ID</span>
-                  <span class="meta-val highlight-cyan mono">133455</span>
-                </div>
-                <div class="emblem-meta-item">
-                  <span class="meta-label">Problem Statement</span>
-                  <span class="meta-val mono">PS26189</span>
-                </div>
-                <div class="emblem-meta-item">
-                  <span class="meta-label">Category &amp; Theme</span>
-                  <span class="meta-val">Blockchain &amp; Cyber</span>
-                </div>
-                <div class="emblem-meta-item">
-                  <span class="meta-label">Admissibility Standard</span>
-                  <span class="meta-val mono">Sec 63 BSA 2023</span>
-                </div>
-              </div>
+          <!-- Project Identity & Specification Metadata Card -->
+          <div class="specs-grid">
+            <div class="spec-card">
+              <div class="spec-label">Official Solution Title</div>
+              <div class="spec-val">AI-Powered Criminal Network Analysis</div>
+              <div class="spec-foot">Prototype Codename: SUTRA</div>
             </div>
-
-            <!-- Active Dossier Preview Panels (Section 2 Right Column Spec) -->
-            <div class="hero-dossier-preview-box">
-              <div class="dossier-preview-header mono">ACTIVE CASE DOSSIERS // FIELD TELEMETRY</div>
-              <div class="dossier-quick-card active" data-case="case-001">
-                <div class="dossier-card-top">
-                  <span class="dossier-indicator active-dot">&#9679;</span>
-                  <span class="dossier-id mono">CR-2026-0891</span>
-                  <span class="status-pill status-active">ACTIVE</span>
-                </div>
-                <div class="dossier-card-title">Op Falcon</div>
-                <div class="dossier-card-cat">Interstate Arms &amp; Narcotics Trafficking</div>
-                <div class="dossier-card-stats mono">15 entities &bull; 28 relationships &bull; 94% conf</div>
-              </div>
-              <div class="dossier-quick-card" data-case="case-002">
-                <div class="dossier-card-top">
-                  <span class="dossier-indicator">&#9675;</span>
-                  <span class="dossier-id mono">CR-2026-1144</span>
-                  <span class="status-pill status-priority">PRIORITY</span>
-                </div>
-                <div class="dossier-card-title">Op Ghost Ledger</div>
-                <div class="dossier-card-cat">Cyber Mule &amp; USDT Layering Syndicate</div>
-                <div class="dossier-card-stats mono">15 entities &bull; 31 relationships &bull; 91% conf</div>
-              </div>
+            <div class="spec-card">
+              <div class="spec-label">Problem Statement ID</div>
+              <div class="spec-val">PS26189</div>
+              <div class="spec-foot">Smart India Hackathon 2026</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-label">Team Identity</div>
+              <div class="spec-val">BLACKSWAN</div>
+              <div class="spec-foot">Team ID: 133455</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-label">Category &amp; Theme</div>
+              <div class="spec-val">Software</div>
+              <div class="spec-foot">Blockchain &amp; Cybersecurity</div>
             </div>
           </div>
         </div>
-
-        <!-- Project Specifications Quick Matrix -->
-        <div class="specs-grid">
-          <div class="spec-card">
-            <div class="spec-label">Official Solution Title</div>
-            <div class="spec-val">AI-Powered Criminal Network Analysis</div>
-            <div class="spec-foot">Prototype Codename: SUTRA</div>
-          </div>
-          <div class="spec-card">
-            <div class="spec-label">Problem Statement ID</div>
-            <div class="spec-val">PS26189</div>
-            <div class="spec-foot">Software Category</div>
-          </div>
-          <div class="spec-card">
-            <div class="spec-label">Team Identity</div>
-            <div class="spec-val">BLACKSWAN</div>
-            <div class="spec-foot">Team ID: 133455</div>
-          </div>
-          <div class="spec-card">
-            <div class="spec-label">Security &amp; Provenance</div>
-            <div class="spec-val">SHA-256 Hash Chain</div>
-            <div class="spec-foot">Tamper-Evident Audit Trail</div>
-          </div>
-        </div>
-
-        <!-- Dedicated Team BLACKSWAN Engineering Core Showcase -->
-        <div class="team-section">
-          <div class="team-header">
-            <div class="team-sub-tag">SIH 2026 // PS26189</div>
-            <h2 class="team-title">Team BLACKSWAN Engineering Core</h2>
-            <p class="team-desc">The cross-functional engineering team pioneering explainable AI and forensic network intelligence for SIH 2026.</p>
-          </div>
-
-          <div class="team-grid">
-            <!-- Member 1: Shakya Vinit -->
-            <div class="team-card">
-              <div class="team-avatar-wrap">
-                <img src="assets/team-shakya.jpg" alt="Shakya Vinit" class="team-avatar-img">
-              </div>
-              <h3 class="team-name">Shakya Vinit</h3>
-              <div class="team-role">UI/UX Product Design &amp; Lead Frontend Systems</div>
-              <div class="team-badge">Team Lead &bull; Core Engineer</div>
-              <div class="team-tags">
-                <span class="tag-pill">Canvas Graph UI</span>
-                <span class="tag-pill">State Router</span>
-                <span class="tag-pill">Cyber HUD</span>
-              </div>
-            </div>
-
-            <!-- Member 2: Anubhav Mohandas -->
-            <div class="team-card">
-              <div class="team-avatar-wrap">
-                <img src="assets/team-anubhav.jpg" alt="Anubhav Mohandas" class="team-avatar-img">
-              </div>
-              <h3 class="team-name">Anubhav Mohandas</h3>
-              <div class="team-role">Lead Cybersecurity Architect &amp; Systems Engineering</div>
-              <div class="team-badge">Security Lead &bull; Core Engineer</div>
-              <div class="team-tags">
-                <span class="tag-pill">Cryptographic Chain</span>
-                <span class="tag-pill">Audit Trail</span>
-                <span class="tag-pill">Forensics</span>
-              </div>
-            </div>
-
-            <!-- Member 3: Vedantkumar Chaudhri -->
-            <div class="team-card">
-              <div class="team-avatar-wrap">
-                <img src="assets/team-vedant.jpg" alt="Vedantkumar Chaudhri" class="team-avatar-img">
-              </div>
-              <h3 class="team-name">Vedantkumar Chaudhri</h3>
-              <div class="team-role">AI Systems, Graph Algorithms &amp; Cloud Backend</div>
-              <div class="team-badge">AI Lead &bull; Core Engineer</div>
-              <div class="team-tags">
-                <span class="tag-pill">Brandes Centrality</span>
-                <span class="tag-pill">Shortest Path</span>
-                <span class="tag-pill">Neo4j</span>
-              </div>
-            </div>
-
-            <!-- Member 4: Dhruv Rana -->
-            <div class="team-card">
-              <div class="team-avatar-wrap">
-                <img src="assets/team-dhruv.jpg" alt="Dhruv Rana" class="team-avatar-img">
-              </div>
-              <h3 class="team-name">Dhruv Rana</h3>
-              <div class="team-role">Threat Telemetry, Forensic Research &amp; SIEM</div>
-              <div class="team-badge">Forensics &bull; Core Engineer</div>
-              <div class="team-tags">
-                <span class="tag-pill">RFC 4180 Ingestion</span>
-                <span class="tag-pill">CDR &amp; RTGS Parser</span>
-                <span class="tag-pill">BSA 2023</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -901,51 +724,17 @@
     </div>
   </div>
 
-  <!-- Application Footer with Team BLACKSWAN Attribution -->
+  <!-- Application Footer -->
   <footer class="app-footer hide-on-print">
     <div class="container footer-inner">
-      <div class="footer-grid-3">
-        <!-- Left: SUTRA wordmark + v3.4 chip + one-liner -->
-        <div class="footer-col-brand">
-          <div class="footer-brand-title">
-            <img src="assets/blackswan-icon.svg" alt="Black Swan Logo" class="footer-logo-img">
-            <span class="footer-brand-name display">SUTRA</span>
-            <span class="footer-version-chip mono">v3.4 PROTOTYPE</span>
-          </div>
-          <p class="footer-brand-desc">
-            AI-Powered Criminal Network Analysis System &mdash; engineered by <strong>Team BLACKSWAN</strong> for Smart India Hackathon 2026.
-          </p>
-        </div>
-
-        <!-- Center: SIH project metadata (mono font) -->
-        <div class="footer-col-meta">
-          <div class="footer-col-header mono">SIH SPECIFICATIONS</div>
-          <ul class="footer-meta-list mono">
-            <li>Problem Statement: <span>PS26189</span></li>
-            <li>Team Name: <span>BLACKSWAN</span></li>
-            <li>Team ID: <span>133455</span></li>
-            <li>Category: <span>Software</span></li>
-            <li>Theme: <span>Blockchain &amp; Cybersecurity</span></li>
-          </ul>
-        </div>
-
-        <!-- Right: GitHub repo link button & compliance -->
-        <div class="footer-col-links">
-          <div class="footer-col-header mono">REPOSITORY &amp; AUDIT</div>
-          <a href="https://github.com/Shakyavinit/sutra-ai" target="_blank" rel="noopener" class="btn btn-sm btn-outline footer-repo-btn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            <span>GitHub: Shakyavinit/sutra-ai</span>
-          </a>
-          <div class="footer-legal-badge mono">Section 63 BSA 2023 Compliant Draft</div>
-        </div>
+      <div class="footer-left">
+        <strong>SUTRA v0.9.0</strong> &bull; AI-Powered Criminal Network Analysis System
+        <div class="footer-sub">SIH 2026 Problem Statement ID: PS26189 | Theme: Blockchain &amp; Cybersecurity | Team BLACKSWAN (ID: 133455)</div>
       </div>
-
-      <!-- Bottom Bar -->
-      <div class="footer-bottom-bar mono">
-        <div class="footer-copy">&copy; 2026 SUTRA | Team BLACKSWAN | MIT License</div>
-        <div class="footer-lead">Lead Developer: <a href="https://github.com/Shakyavinit" target="_blank" rel="noopener">@Shakyavinit</a></div>
+      <div class="footer-right">
+        <span>Lead Developer: <a href="https://github.com/Shakyavinit" target="_blank" rel="noopener">@Shakyavinit</a></span>
+        <span class="footer-sep">&bull;</span>
+        <a href="https://github.com/Shakyavinit/sutra-ai" target="_blank" rel="noopener">GitHub: Shakyavinit/sutra-ai</a>
       </div>
     </div>
   </footer>
