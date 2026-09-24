@@ -174,6 +174,20 @@ class SutraApp {
     if (badge && this.activeCaseData) {
       badge.textContent = `${this.activeCaseData.caseId}: ${this.activeCaseData.title}`;
     }
+
+    // Sync hero active dossier cards
+    const heroDossierCards = document.querySelectorAll('.dossier-quick-card');
+    heroDossierCards.forEach(card => {
+      const caseId = card.getAttribute('data-case');
+      const ind = card.querySelector('.dossier-indicator');
+      if (caseId === this.currentCaseId) {
+        card.classList.add('active');
+        if (ind) { ind.classList.add('active-dot'); ind.innerHTML = '&#9679;'; }
+      } else {
+        card.classList.remove('active');
+        if (ind) { ind.classList.remove('active-dot'); ind.innerHTML = '&#9675;'; }
+      }
+    });
   }
 
   // --- Graph Initialization ---
@@ -1066,6 +1080,31 @@ class SutraApp {
         this.loadCase(e.target.value);
       });
     });
+
+    // Hero Quick Dossier Card clicks
+    const heroDossierCards = document.querySelectorAll('.dossier-quick-card');
+    heroDossierCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const caseId = card.getAttribute('data-case');
+        if (caseId && caseId !== this.currentCaseId) {
+          this.loadCase(caseId);
+        }
+      });
+    });
+
+    // Mobile Navigation Toggle
+    const btnMobileNavToggle = document.getElementById('btnMobileNavToggle');
+    const workspaceNav = document.getElementById('workspaceNav');
+    if (btnMobileNavToggle && workspaceNav) {
+      btnMobileNavToggle.addEventListener('click', () => {
+        workspaceNav.classList.toggle('mobile-open');
+      });
+      workspaceNav.querySelectorAll('.nav-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          workspaceNav.classList.remove('mobile-open');
+        });
+      });
+    }
 
     // File Upload handling
     const fileInput = document.getElementById('evidenceFileInput');
