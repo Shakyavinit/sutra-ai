@@ -84,6 +84,16 @@ export class GraphEngine {
     this.startRenderLoop();
   }
 
+    static normalizeRelCategory(relType) {
+    if (!relType) return 'ASSOCIATED_WITH';
+    const t = String(relType).toUpperCase();
+    if (t.includes('CALL') || t.includes('PHONE') || t.includes('SIM')) return 'CALLS';
+    if (t.includes('TRANSFER') || t.includes('FUNDS') || t.includes('PAYMENT') || t.includes('ESCROW') || t.includes('CRYPTO') || t.includes('BRIDGE') || t.includes('MULE') || t.includes('ACCOUNT') || t.includes('DRAIN')) return 'FINANCIAL_TRANSFER';
+    if (t.includes('VEHICLE') || t.includes('TOLL') || t.includes('DRIVE') || t.includes('CARRIED')) return 'OPERATES';
+    if (t.includes('FACILITY') || t.includes('LOCATED') || t.includes('SIGHTING') || t.includes('SESSION')) return 'CO_LOCATED';
+    return 'ASSOCIATED_WITH';
+  }
+
   static normalizeType(rawType) {
     if (!rawType) return 'Document';
     const s = String(rawType).trim().toLowerCase();
@@ -304,7 +314,8 @@ export class GraphEngine {
       if (!this.filters.statuses.has(e.status)) return false;
 
       // Relationship type filter
-      if (!this.filters.relationshipTypes.has('ALL') && !this.filters.relationshipTypes.has(e.type)) {
+      const cat = GraphEngine.normalizeRelCategory(e.type);
+      if (!this.filters.relationshipTypes.has('ALL') && !this.filters.relationshipTypes.has(cat) && !this.filters.relationshipTypes.has(e.type)) {
         return false;
       }
 

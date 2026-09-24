@@ -107,21 +107,31 @@ class SutraApp {
     this.currentCaseId = caseId;
     this.auditChain.setCase(caseId);
 
-    const url = `${this.baseDataUrl}${caseId}.json`;
+    const candidateUrls = [
+      `${this.baseDataUrl}${caseId}.json`,
+      `/sutra-ai/demo-data/${caseId}.json`,
+      `./demo-data/${caseId}.json`,
+      `demo-data/${caseId}.json`,
+      `./public/demo-data/${caseId}.json`
+    ];
 
-    try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      this.activeCaseData = await res.json();
-    } catch (err) {
-      console.warn(`[SUTRA] Fetch from ${url} failed, trying fallback path:`, err);
+    let loaded = false;
+    for (const url of candidateUrls) {
       try {
-        const fallbackRes = await fetch(`./public/demo-data/${caseId}.json`);
-        this.activeCaseData = await fallbackRes.json();
-      } catch (e2) {
-        console.error('[SUTRA] Failed to load case data:', e2);
-        return;
+        const res = await fetch(url);
+        if (res.ok) {
+          this.activeCaseData = await res.json();
+          loaded = true;
+          break;
+        }
+      } catch (e) {
+        // try next candidate
       }
+    }
+
+    if (!loaded) {
+      console.error('[SUTRA] Failed to load case data from any candidate URL for:', caseId);
+      return;
     }
 
     // Initialize sub-controllers
@@ -182,6 +192,12 @@ class SutraApp {
     }
 
     this.setupGraphControls();
+    if (window.location.hash.includes('graph')) {
+      setTimeout(() => {
+        this.graphEngine.handleResize();
+        this.graphEngine.fitToView();
+      }, 100);
+    }
   }
 
   setupGraphControls() {
@@ -921,15 +937,18 @@ class SutraApp {
         body: 'Using the Shortest Path engine, we automatically discover the conduit between Kingpin Tariq and the Dubai Hawala Escrow account, revealing the intermediary mule conduit.',
         action: () => {
           this.switchView('graph');
-          const sourceSelect = document.getElementById('pathSourceSelect');
-          const targetSelect = document.getElementById('pathTargetSelect');
-          const btnFind = document.getElementById('btnFindPath');
+          setTimeout(() => {
+            const sourceSelect = document.getElementById('pathSourceSelect');
+            const targetSelect = document.getElementById('pathTargetSelect');
+            const btnFind = document.getElementById('btnFindPath');
 
-          if (sourceSelect && targetSelect && btnFind) {
-            sourceSelect.value = 'E-001';
-            targetSelect.value = 'E-009';
-            btnFind.click();
-          }
+            if (sourceSelect && targetSelect && btnFind) {
+              const isCase2 = this.currentCaseId === 'case-002';
+              sourceSelect.value = isCase2 ? 'E101' : 'E03';
+              targetSelect.value = isCase2 ? 'E107' : 'E10';
+              btnFind.click();
+            }
+          }, 200);
         }
       },
       {
