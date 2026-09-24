@@ -1,9 +1,10 @@
 /**
  * SUTRA - Backend Investigation Server
- * Smart Unified Threat Relationship Analytics
+ * AI-Powered Criminal Network Analysis System (Prototype Codename: SUTRA)
  * SIH 2026 Problem Statement ID: 26189 | Team BLACKSWAN (ID: 133455)
  */
 
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs';
@@ -27,8 +28,9 @@ initNeo4j();
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ONLINE',
-    service: 'SUTRA Investigation Core',
-    version: '3.4.0',
+    solution: 'AI-Powered Criminal Network Analysis System',
+    codename: 'SUTRA',
+    version: '0.9.0',
     mode: process.env.NEO4J_URI ? 'CONNECTED_NEO4J' : 'HYBRID_STANDALONE',
     timestamp: new Date().toISOString()
   });
@@ -57,17 +59,31 @@ app.get('/api/cases', (req, res) => {
   }
 });
 
-// Get Case By ID
+// Get Case By ID (Exact match or 404)
 app.get('/api/cases/:caseId', (req, res) => {
   const { caseId } = req.params;
   const dataDir = path.join(__dirname, '../public/demo-data');
-  const filename = caseId === 'case-002' || caseId === 'CR-2026-1144' ? 'case-002.json' : 'case-001.json';
-  
+  const validFiles = {
+    'case-001': 'case-001.json',
+    'CR-2026-0891': 'case-001.json',
+    'case-002': 'case-002.json',
+    'CR-2026-1144': 'case-002.json'
+  };
+
+  const filename = validFiles[caseId];
+  if (!filename) {
+    return res.status(404).json({
+      error: 'Case not found',
+      caseId,
+      message: `Requested dossier '${caseId}' does not exist in the investigation registry.`
+    });
+  }
+
   try {
     const caseData = JSON.parse(fs.readFileSync(path.join(dataDir, filename), 'utf8'));
     res.json(caseData);
   } catch (err) {
-    res.status(404).json({ error: 'Case not found', caseId });
+    res.status(500).json({ error: 'Failed to read case data', details: err.message });
   }
 });
 
@@ -78,7 +94,6 @@ app.post('/api/evidence/upload', (req, res) => {
     return res.status(400).json({ error: 'Filename is required' });
   }
 
-  // Simulated server-side entity extraction logic
   res.json({
     success: true,
     file: filename,
