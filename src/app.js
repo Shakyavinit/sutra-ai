@@ -1223,4 +1223,17 @@ class SutraApp {
 // Instantiate SUTRA on DOM Load
 document.addEventListener('DOMContentLoaded', () => {
   window.sutraApp = new SutraApp();
+
+  // Modern UI micro-interactions: Card Spotlight (Aceternity / React Bits / Animata)
+  const initCardSpotlights = () => {
+    document.querySelectorAll('.kpi-card, .spec-card, .pipeline-flow-card').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+    });
+  };
+  initCardSpotlights();
+  window.addEventListener('hashchange', () => setTimeout(initCardSpotlights, 120));
 });
