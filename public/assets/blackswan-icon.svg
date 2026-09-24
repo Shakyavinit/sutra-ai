@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#080e1c"/>
+    </linearGradient>
+    <linearGradient id="swanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <path d="M50 5 L90 20 V50 C90 75 50 95 50 95 C50 95 10 75 10 50 V20 Z" fill="url(#shieldGrad)" stroke="#38bdf8" stroke-width="3"/>
+  <path d="M48 24 C44 24 40 27 40 31 C40 36 46 40 50 45 C54 49 56 54 53 60 C50 66 43 68 37 65 C32 62 30 56 31 52 C27 55 26 62 29 67 C34 75 46 76 54 70 C61 64 63 54 58 46 C54 40 48 36 48 31 C48 28 50 26 53 26 C57 26 60 29 61 32 L67 30 C65 24 60 20 53 20 C51 20 49 22 48 24 Z" fill="url(#swanGrad)"/>
+  <circle cx="50" cy="50" r="4" fill="#38bdf8"/>
+  <circle cx="70" cy="55" r="3" fill="#38bdf8"/>
+  <circle cx="34" cy="40" r="3" fill="#38bdf8"/>
+  <line x1="50" y1="50" x2="70" y2="55" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <line x1="50" y1="50" x2="34" y2="40" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 2"/>
+</svg>
